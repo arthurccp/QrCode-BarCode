@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Qr_Code" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JOE-8c-Jom">
+                                <rect key="frame" x="20" y="103" width="374" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="tfj-yi-qe2"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="BarCode"/>
+                                    <segment title="QrCode"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didChangeOption:" destination="BYZ-38-t0r" eventType="valueChanged" id="8jy-YS-1qZ"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q1K-FJ-Z7U">
+                                <rect key="frame" x="20" y="53" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aN0-9Q-F1S">
+                                <rect key="frame" x="20" y="158" width="374" height="31"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Generate"/>
+                                <connections>
+                                    <action selector="generate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YZk-lt-X1M"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AcZ-a6-fwd">
+                                <rect key="frame" x="97" y="326" width="220" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="pFK-Tf-djb"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAI-Ok-bbn">
+                                <rect key="frame" x="153" y="554" width="108" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Compartilhar"/>
+                                <connections>
+                                    <action selector="shareAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a4I-uY-nMN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pAI-Ok-bbn" firstAttribute="top" secondItem="AcZ-a6-fwd" secondAttribute="bottom" constant="8" symbolic="YES" id="0xF-AW-uRM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AcZ-a6-fwd" secondAttribute="bottom" constant="316" id="1xi-My-8T4"/>
+                            <constraint firstItem="q1K-FJ-Z7U" firstAttribute="leading" secondItem="JOE-8c-Jom" secondAttribute="leading" id="5k8-kb-xEs"/>
+                            <constraint firstItem="q1K-FJ-Z7U" firstAttribute="trailing" secondItem="JOE-8c-Jom" secondAttribute="trailing" id="6wO-xM-H5T"/>
+                            <constraint firstItem="JOE-8c-Jom" firstAttribute="leading" secondItem="aN0-9Q-F1S" secondAttribute="leading" id="77C-j6-F5a"/>
+                            <constraint firstItem="aN0-9Q-F1S" firstAttribute="top" secondItem="JOE-8c-Jom" secondAttribute="bottom" constant="25" id="Awb-hK-sud"/>
+                            <constraint firstItem="pAI-Ok-bbn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GI6-Mm-LLF"/>
+                            <constraint firstItem="aN0-9Q-F1S" firstAttribute="centerX" secondItem="AcZ-a6-fwd" secondAttribute="centerX" id="PAS-6j-YPE"/>
+                            <constraint firstItem="q1K-FJ-Z7U" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VQG-tN-tiU"/>
+                            <constraint firstItem="q1K-FJ-Z7U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="9" id="XEE-0h-Qcf"/>
+                            <constraint firstItem="pAI-Ok-bbn" firstAttribute="top" secondItem="AcZ-a6-fwd" secondAttribute="bottom" constant="8" id="aSD-RO-Vn6"/>
+                            <constraint firstItem="q1K-FJ-Z7U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kev-Vr-aee"/>
+                            <constraint firstItem="JOE-8c-Jom" firstAttribute="top" secondItem="q1K-FJ-Z7U" secondAttribute="bottom" constant="16" id="lqN-fm-OBE"/>
+                            <constraint firstItem="AcZ-a6-fwd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="97" id="tMe-hm-DVb"/>
+                            <constraint firstItem="AcZ-a6-fwd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="weO-lg-tOr"/>
+                            <constraint firstItem="JOE-8c-Jom" firstAttribute="trailing" secondItem="aN0-9Q-F1S" secondAttribute="trailing" id="whQ-AM-A7C"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="DisplayCodeView" destination="AcZ-a6-fwd" id="lyV-df-uiN"/>
+                        <outlet property="codeSelector" destination="JOE-8c-Jom" id="WIo-II-gvU"/>
+                        <outlet property="dataField" destination="q1K-FJ-Z7U" id="blX-Nk-yLN"/>
+                        <outlet property="shareOutlet" destination="pAI-Ok-bbn" id="5mH-dR-0Rh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
